@@ -4,50 +4,41 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('ifthenben:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('ifthenben:server');
+const http = require('http');
+const https = require('https');
+const fs = require('fs');
 
-/**
- * Get port from environment and store in Express.
- */
+// HTTPS Cert stuff
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.ifthenben.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/www.ifthenben.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/www.ifthenben.com/chain.pem', 'utf8');
 
-var port = normalizePort(process.env.PORT || '80');
-app.set('port', port);
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
 
-/**
- * Create HTTP server.
- */
+// Port
+const portHTTP = 80;
+app.set('portHTTP', portHTTP);
+const portHTTPS = 443;
+app.set('portHTTPS', portHTTPS);
 
-var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+// Create servers
+const serverHTTP = http.createServer(app);
+const serverHTTPS = https.createServer(credentials, app);
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
+//Listen on both servers
+serverHTTP.listen(portHTTP);
+serverHTTPS.listen(portHTTPS);
+serverHTTP.on('error', onError);
+serverHTTP.on('listening', onListening);
+serverHTTPS.on('error', onError);
+serverHTTPS.on('listening', onListening);
 
 /**
  * Event listener for HTTP server "error" event.
@@ -58,7 +49,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  let bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
@@ -82,8 +73,8 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  let addr = serverHTTP.address();
+  let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
