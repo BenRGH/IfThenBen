@@ -1,0 +1,24 @@
+baseurl = "/"
+title = "IfThenBen"
+copyright = "Copyright &copy; 2020 - Ben Rose"
+canonifyurls = true
+theme = "kiera"
+
+paginate = 6
+
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+
+[author]
+    name = ""
+    github = "BenRGH"
+    gitlab = ""
+    linkedin = ""
+    facebook = ""
+    twitter = "KingB3n_"
+    instagram = ""
+
+[params]
+    tagline = "Text, Code & The End Of Everything"
+    custom_css = ["/styles/custom.css"]
