@@ -2,7 +2,7 @@ baseurl = "/"
 title = "IfThenBen"
 copyright = "Copyright &copy; 2020 - Ben Rose"
 canonifyurls = true
-theme = "kiera"
+theme = "hugo-kiera"
 
 paginate = 6
 
