@@ -1,6 +1,7 @@
 {
     "scripts": {
-      "build": "hugo"
+      "build": "hugo",
+      "startdev": "hugo server -D"
     }
-  }
+}
   
