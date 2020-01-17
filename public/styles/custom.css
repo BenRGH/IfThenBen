@@ -1,0 +1,17 @@
+a {
+    color: #CA2323;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7C0000;
+    text-decoration: underline !important;
+}
+
+#container nav {
+    padding-bottom: 0.1em;
+}
+
+#container nav ul li a.active {
+    border-bottom: .2em solid #666666;
+}
