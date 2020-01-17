@@ -22,3 +22,7 @@ pygmentsCodeFences = true
 [params]
     tagline = "Text, Code & The End Of Everything"
     custom_css = ["/styles/custom.css"]
+
+# [module]
+#   [[module.imports]]
+#     path = "github.com/avianto/hugo-kiera"
