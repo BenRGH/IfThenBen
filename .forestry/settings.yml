@@ -4,10 +4,14 @@ auto_deploy: false
 admin_path: ''
 webhook_url: https://api.zeit.co/v1/integrations/deploy/QmYGT6cGjWCc6o3xVHoiK5qWXoPH4gW4bweAjb9VRKih2V/GLg8mbXjSp
 sections:
+- type: directory
+  path: content/posts
+  label: Posts
+  create: all
+  match: "**/*"
 - type: document
   path: content/posts
   label: Edit file
-  match: "**/*"
 - type: directory
   path: content
   label: Pages
