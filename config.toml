@@ -21,5 +21,6 @@ pygmentsCodeFences = true
 
 [params]
     tagline = "Text, Code & The End Of Everything"
+    description = "Text, Code & The End Of Everything"
     custom_css = ["/styles/custom.css"]
 
