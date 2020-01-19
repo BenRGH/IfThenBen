@@ -5,6 +5,9 @@ tags = []
 categories = []
 +++
 
+let d = new Date();
+d.toISOString();
+
 # Headings
 
 # Heading 1
