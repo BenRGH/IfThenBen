@@ -3,7 +3,7 @@
     "public": true,
     "headers": [
         {
-            "source": "/*",
+            "source": "/*.*",
             "headers": [
                 {
                     "key": "X-Clacks-Overhead",
