@@ -1,0 +1,19 @@
+{{ if not .Params.meta }}
+<section class="post-nav">
+    <ul>
+        {{ with .PrevInSection }}
+        <li>
+            <a href="{{.Permalink}}"><i class="icon-chevron-circle-left"></i> {{ .Title }}</a>
+        </li>
+        {{ end }}
+        {{ with .NextInSection }}
+        <li>
+            <a href="{{.Permalink}}">{{ .Title }} <i class="icon-chevron-circle-right"></i> </a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+    {{ if .Site.DisqusShortname }}
+        {{ partial "disqus" . }}
+    {{ end }}
+{{ end }}
