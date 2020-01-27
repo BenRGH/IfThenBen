@@ -20,7 +20,7 @@ To add the header just create a now.json file (if you don't already have one) in
     "public": true,
     "headers": [
         {
-            "source": "/*.*",
+            "source": "/",
             "headers": [
                 {
                     "key": "X-Clacks-Overhead",
