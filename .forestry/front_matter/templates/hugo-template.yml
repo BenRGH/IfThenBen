@@ -21,4 +21,5 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/creating-a-wireless-volume-mixer-using-esp32.md
 - content/posts/first-real-post.md
