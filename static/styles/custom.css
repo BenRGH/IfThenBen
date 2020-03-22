@@ -10,6 +10,15 @@
     font-display: block;
 }
 
+@font-face{
+    font-family: 'JetBrainsMono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 i {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'minicons' !important;
@@ -44,7 +53,6 @@ i {
     content: "\f138";
 }
 
-
 a {
     color: #CA2323;
     text-decoration: none;
@@ -65,4 +73,12 @@ a:hover {
 
 #container nav ul li a.active {
     border-bottom: .2em solid #666666;
+}
+
+pre {
+    font-family: JetBrainsMono;
+}
+
+code {
+    font-family: JetBrainsMono;
 }
