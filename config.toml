@@ -11,7 +11,7 @@ enableEmoji = true
 pygmentsCodeFences = true
 
 [author]
-    name = ""
+    name = "Ben"
     github = "BenRGH"
     gitlab = ""
     linkedin = ""
