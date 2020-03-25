@@ -19,6 +19,8 @@
     font-style: normal;
 }
 
+
+/* ===================ICONS===============*/
 i {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'minicons' !important;
@@ -52,6 +54,45 @@ i {
 .icon-chevron-circle-right:before {
     content: "\f138";
 }
+.icon-exclamation-triangle:before {
+    content: "\f071";
+}
+.icon-external-link:before {
+    content: "\f08e";
+}
+.icon-chain:before {
+    content: "\f0c1";
+}
+.icon-quote-left:before {
+    content: "\f10d";
+}
+.icon-quote-right:before {
+    content: "\f10e";
+}
+.icon-code:before {
+    content: "\f121";
+}
+.icon-chain-broken:before {
+    content: "\f127";
+}
+.icon-sun-o:before {
+    content: "\f185";
+}
+.icon-moon-o:before {
+    content: "\f186";
+}
+.icon-share-alt:before {
+    content: "\f1e0";
+}
+.icon-clone:before {
+    content: "\f24d";
+}
+
+/*============= ACTUAL CSS=============*/
+body {
+    color: var(--main-text-color);
+    background-color: var(--main-background-color);
+}
 
 a {
     color: #CA2323;
@@ -71,8 +112,21 @@ a:hover {
     padding-bottom: 0.1em;
 }
 
+#container header h1 a {
+    color: var(--h1-text-color);
+}
+
 #container nav ul li a.active {
     border-bottom: .2em solid #666666;
+}
+
+#container main article p code {
+    background-color: var(--inline-code-background-color);
+}
+
+#container main article pre {
+    background-color: var(--code-background-color);
+    color: var(--code-color);
 }
 
 pre {
@@ -81,4 +135,30 @@ pre {
 
 code {
     font-family: JetBrainsMono;
+}
+
+/*===========DARK MODE==========*/
+html, html[data-theme="light"] {
+    --main-background-color: white;
+    --main-text-color: #333333; 
+    --h1-text-color: #000000;
+    --inline-code-background-color: #ffcccc;
+    --code-background-color: #272822;
+    --code-color: #f8f8f2;
+    /* TODO move to hsl colours? ! FUTURE PROOFING ! */
+}
+
+html[data-theme="dark"] {
+    --main-background-color: hsl(0, 0%, 10%);
+    --main-text-color: hsl(0, 10%, 80%);
+    --h1-text-color: hsl(0, 10%, 80%);
+    --inline-code-background-color: #0e141b;
+    --code-background-color: #272822;
+    --code-color: #f8f8f2;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+      content: "dark";
+    }
 }

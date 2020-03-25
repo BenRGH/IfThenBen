@@ -6,16 +6,25 @@
   <title>{{ .Site.Title }}</title>
   {{ partial "meta" . }}
   {{ partial "header_includes" . -}}
+
+  <!-- dark mode check -->
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === "dark") {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
 </head>
 
 <body>
   <div id="container">
     <header>
       <h1>
-                <a href="{{ relLangURL "/" }}">{{ .Site.Title | markdownify }}</a>
-            </h1>
+          <a href="{{ relLangURL "/" }}">{{ .Site.Title | markdownify }}</a>
+      </h1>
 
       <ul id="social-media">
+        <li><a id="dark-mode-toggle"><i id="dark-mode-toggle--icon" class="icon-moon-o" aria-hidden="true"></i></a></li>
         {{ range .Site.Languages -}}
         {{ if ne .LanguageName $.Site.Language.LanguageName }}
         <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
