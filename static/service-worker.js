@@ -365,7 +365,6 @@ self.addEventListener(
 
 
 self.addEventListener('message', (event) => {
-
     if(
         typeof event.data === 'object' &&
         typeof event.data.action === 'string'
