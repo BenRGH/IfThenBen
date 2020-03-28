@@ -1,7 +1,8 @@
 (function(){
-    console.log("%cwololol", "color: red; font-size: 25px;");
+    console.log("%cScript running", "color: red; font-size: 25px;");
 
     // ! Dark mode toggle
+
     const toggleDarkMode = document.getElementById("dark-mode-toggle");
     const toggleDarkModeIcon = document.getElementById("dark-mode-toggle--icon");
     const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');	
@@ -32,8 +33,6 @@
             toggleDarkModeIcon.className = "icon-sun-o";
         }
     });
-
-
 
     // ! Offline service worker
 
