@@ -41,7 +41,7 @@ As a person learning a second language it can be hard sometimes finding the righ
 ; Question mark means you dont need any man to tell you what for (does inline)
 
 
-; Lowercase
+; Works for both upper and lower case!
 :?*:ccc::ç
 
 :?*:/e/::é
@@ -74,7 +74,7 @@ As a person learning a second language it can be hard sometimes finding the righ
 ```
 
 ### Easy Print Screen
-I use [ShareX](https://getsharex.com/) for all my screen-printing activities and sometimes reaching across my keyboard is difficult with one hand so I simplified the process by using ctrl+alt+c.
+I use [ShareX](https://getsharex.com/) for all my screen-printing activities and sometimes reaching across my keyboard is difficult with one hand (for example while using [Anki](https://apps.ankiweb.net/)) so I simplified the process by using ctrl+alt+c.
 
 ```ahk
 ^!c::
