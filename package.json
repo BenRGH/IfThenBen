@@ -1,6 +1,6 @@
 {
     "scripts": {
-      "build": "hugo",
+      "build": "hugo --baseURL='https://ifthenben.com'",
       "startdev": "hugo server -D"
     }
 }

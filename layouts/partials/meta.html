@@ -3,7 +3,7 @@
   <meta name="description" content="{{ .Site.Params.description | default "The HTML5 Herald" }}" />
   <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}" />
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-  {{- with .OutputFormats.Get "rss" -}}
-  	{{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
-  {{- end -}}
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
   {{ hugo.Generator -}}
