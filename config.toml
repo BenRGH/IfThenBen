@@ -24,3 +24,7 @@ pygmentsCodeFences = true
     description = "Text, Code & The End Of Everything"
     custom_css = ["/styles/custom.css"]
 
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
