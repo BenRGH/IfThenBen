@@ -1,5 +1,7 @@
 (function(){
     console.log("%cScript running", "color: red; font-size: 25px;");
+    
+    const rootElement = document.documentElement;
 
     // ! Dark mode toggle
 
@@ -33,6 +35,33 @@
             toggleDarkModeIcon.className = "icon-sun-o";
         }
     });
+
+    // ! Scroll to top functionality
+
+    const scrollToTopBtn = document.getElementById("scrollTopBtn");
+
+    if (scrollToTopBtn !== null && scrollToTopBtn !== undefined) {
+        scrollToTopBtn.addEventListener("click", () => {
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        })
+
+        document.addEventListener("scroll", () => {
+            let scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+            if ((rootElement.scrollTop / scrollTotal ) > 0.30 ) {
+                // Show button
+                console.log("show");
+                scrollToTopBtn.classList.add("showBtn")
+            } else {
+                // Hide button
+                console.log("hide");
+                scrollToTopBtn.classList.remove("showBtn")
+            }
+        })
+    }
+
 
     // ! Offline service worker
 

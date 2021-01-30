@@ -10,7 +10,7 @@
     font-display: block;
 }
 
-@font-face{
+@font-face {
     font-family: 'JetBrainsMono';
     src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
         url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff'),
@@ -18,7 +18,6 @@
     font-weight: 400;
     font-style: normal;
 }
-
 
 /* ===================ICONS===============*/
 i {
@@ -77,9 +76,11 @@ i {
 }
 .icon-sun-o:before {
     content: "\f185";
+    cursor: pointer;
 }
 .icon-moon-o:before {
     content: "\f186";
+    cursor: pointer;
 }
 .icon-share-alt:before {
     content: "\f1e0";
@@ -89,9 +90,24 @@ i {
 }
 
 /*============= ACTUAL CSS=============*/
+* {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--main-text-color);
     background-color: var(--main-background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Signika', sans-serif;
 }
 
 a {
@@ -102,6 +118,10 @@ a {
 a:hover {
     color: #7C0000;
     text-decoration: underline !important;
+}
+
+p {
+    text-align: justify;
 }
 
 #container main {
@@ -120,8 +140,38 @@ a:hover {
     border-bottom: .2em solid #666666;
 }
 
+pre {
+    font-family: JetBrainsMono;
+}
+
+code {
+    font-family: JetBrainsMono;
+    z-index: 1000;
+}
+
 #container main article p code {
+    max-width: 100vw;
+    position: inherit;
+    display: inline-block;
     background-color: var(--inline-code-background-color);
+    padding: 0;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    padding-inline-start: 0.5em;
+    padding-inline-end: 0.5em;
+    line-height: 1.8em;
+    transition: all 1s ease-out; /*shrink time*/
+    transition-delay: .8s;
+    border-radius: 3px;
+    border: solid 1px var(--code-outline);
+}
+
+#container main article p code:hover {
+    transition: all 0.2s ease-out; /*expansion time*/
+    z-index: 2;
+    transform: scale(var(--code-zoom-scale));
+    backface-visibility: hidden;
+    filter: blur(.0px);
 }
 
 #container main article pre {
@@ -129,12 +179,39 @@ a:hover {
     color: var(--code-color);
 }
 
-pre {
-    font-family: JetBrainsMono;
+img {
+    box-shadow: none;
+    border-radius: 2px;
+    filter: var(--img-brightness);
 }
 
-code {
-    font-family: JetBrainsMono;
+#scrollTopBtn {
+    position: fixed;
+    display: block;
+    height: 2em;
+    width: 2em;
+    font-size: 2em;
+    bottom: 1.5em;
+    top: auto;
+    right: 2em;
+    left: auto;
+    border-radius: 50%;
+    z-index: 1001;
+    transition: all .5s ease;
+    opacity: 0;
+    transform: translateY(50em);
+    border: var(--scroll-to-top-border);
+    cursor: pointer;
+    background-color: var(--scroll-to-top-colour);
+}
+
+#scrollTopBtn:hover {
+    box-shadow: var(--box-shadow);
+}
+
+.showBtn {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /*===========DARK MODE==========*/
@@ -145,6 +222,17 @@ html, html[data-theme="light"] {
     --inline-code-background-color: #ffcccc;
     --code-background-color: #272822;
     --code-color: #f8f8f2;
+    --img-brightness: brightness(1) contrast(1);
+    --code-outline: black;
+    --box-shadow: 
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+    --scroll-to-top-colour: white;
+    --scroll-to-top-border: solid 1px #e7e7e7;
     /* TODO move to hsl colours? ! FUTURE PROOFING ! */
 }
 
@@ -152,13 +240,35 @@ html[data-theme="dark"] {
     --main-background-color: hsl(0, 0%, 10%);
     --main-text-color: hsl(0, 10%, 80%);
     --h1-text-color: hsl(0, 10%, 80%);
-    --inline-code-background-color: #0e141b;
+    --inline-code-background-color: #292D3E;
     --code-background-color: #272822;
     --code-color: #f8f8f2;
+    --img-brightness: brightness(.8) contrast(1.2);
+    --code-outline: #f8f8f2;
+    --box-shadow: none;
+    --scroll-to-top-colour: #333333;
+    --scroll-to-top-border: solid 1px #f3f3f3;
+}
+
+:root {
+    --code-zoom-scale: 1.5;
 }
 
 @media (prefers-color-scheme: dark) {
+    /* Only use to set dark mode var */
     html {
       content: "dark";
+    }
+}
+
+@media screen and (max-device-width: 1055px) {
+    :root {
+        --code-zoom-scale: 1.2;
+    }
+}
+
+@media screen and (max-device-width: 843px) {
+    :root {
+        --code-zoom-scale: 1;
     }
 }

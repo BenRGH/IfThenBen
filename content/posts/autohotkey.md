@@ -5,7 +5,6 @@ tags = ["how to", "authotkey", "language learning"]
 categories = ["how to", "powertools"]
 +++
 
-## Autohotkey
 [Autohotkey](https://www.autohotkey.com/) is an excellent tool I've been using for years to improve the way I use my PC in a very subtle way. Despite sounding like a keylogging program that maliciously steals your credit card details (which as a **FOSS** it does not), [Autohotkey](https://www.autohotkey.com/) is a program whereby you write scripts that run in the background on your computer. These scripts can do anything you can do with a keyboard, much like python but less advanced. If you're a developer and you've ever used *snippets* before in an IDE or text editor then you'll be very familiar with the concept of typing a couple characters and having them replaced with whatever you defined in your snippet.
 
 For example typing the letters "rfc" might offer you a snippet for a React functional component, or maybe "cl" for console.log() 

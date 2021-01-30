@@ -13,11 +13,7 @@ pygmentsCodeFences = true
 [author]
     name = "Ben"
     github = "BenRGH"
-    gitlab = ""
-    linkedin = ""
-    facebook = ""
     twitter = "KingB3n_"
-    instagram = ""
 
 [params]
     tagline = "Text, Code & The End Of Everything"

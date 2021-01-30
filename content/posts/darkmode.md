@@ -5,8 +5,7 @@ tags = ["how to", "hugo", "dark mode"]
 categories = ["how to", "web"]
 +++
 
-## Dark Mode
-Otherwise known as "Night Mode" is a setting many apps come with nowadays that allows you to toggle the visual appearance of the app between a very light "day" mode (white background, black text) and a dark "night" mode (black background, white text). The purpose of this is to alleviate the stress on your eyes at night, straining to read text on a bright screen.
+Otherwise known as "Night Mode", dark mode is a setting many apps come with nowadays that allows you to toggle the visual appearance of the app between a very light "day" mode (white background, black text) and a dark "night" mode (black background, white text). The purpose of this is to alleviate the stress on your eyes at night, straining to read text on a bright screen.
 
 ![night mode toggle](/images/nightmode.gif)
 
