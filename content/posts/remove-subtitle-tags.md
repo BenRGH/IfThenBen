@@ -7,14 +7,14 @@ categories = ["how to", "anki"]
 
 If like me you've been making [anki](https://apps.ankiweb.net/) decks from your locally-sourced and *legally owned* media files (in my case .MKV), then you might have encountered this scenario:
 
-1. Making sentence cards/sentence mining new language with [Subs2Srs](http://subs2srs.sourceforge.net/) (good post about the process here [**how to make thousands of high quality sentence cards for Anki**](https://www.britvsjapan.com/get-thousands-contextual-sentences-learning-languages-sentence-banks/))
-2. You go to choose your input files, but you don't have the subs as a separate file (they're just inside the .MKV), so you use the MKV extract subs tool
+- Making sentence cards/sentence mining new language with [Subs2Srs](http://subs2srs.sourceforge.net/) (good post about the process here [**how to make thousands of high quality sentence cards for Anki**](https://www.britvsjapan.com/get-thousands-contextual-sentences-learning-languages-sentence-banks/))
+- You go to choose your input files, but you don't have the subs as a separate file (they're just inside the .MKV), so you use the MKV extract subs tool
 
 ![subs2srs window](/images/subs2srs.webp) 
 ![subs2srs accessing extract tool](/images/mkvsubextract.webp)
 ![subs2srs extract tool](/images/mkvextractwindow.webp)
 
-3. Once you've extracted the subs as a separate .ass file (lol) you open the subs/preview them in [Subs2Srs](http://subs2srs.sourceforge.net/) and you see a load of these '**\\h**' tags. What the heck?
+- Once you've extracted the subs as a separate .ass file (lol) you open the subs/preview them in [Subs2Srs](http://subs2srs.sourceforge.net/) and you see a load of these '**\\h**' tags. What the heck?
 
 ![h tags in subs](/images/whattheheck.webp)
 
