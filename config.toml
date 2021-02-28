@@ -9,6 +9,7 @@ paginate = 6
 summaryLength = 30
 enableEmoji = true
 pygmentsCodeFences = true
+enableRobotsTXT = true
 
 [author]
     name = "Ben"
