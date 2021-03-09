@@ -181,6 +181,11 @@ img {
     filter: var(--img-brightness);
 }
 
+p {
+    text-align: justify;
+    hyphens: auto;
+}
+
 #scrollTopBtn {
     position: fixed;
     display: block;
