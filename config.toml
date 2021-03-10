@@ -11,6 +11,8 @@ enableEmoji = true
 pygmentsCodeFences = true
 enableRobotsTXT = true
 
+DisqusShortname = "ifthenben"
+
 [author]
     name = "Ben"
     github = "BenRGH"

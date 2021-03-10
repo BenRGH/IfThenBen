@@ -31,10 +31,10 @@
         {{ end }}
         {{ end }}
         {{ if .Site.Author.twitter }}
-        <li><a href="https://twitter.com/{{ .Site.Author.twitter }}"><i class="icon-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/{{ .Site.Author.twitter }} rel="me""><i class="icon-twitter" aria-hidden="true"></i></a></li>
         {{ end }} 
         {{ if .Site.Author.github }}
-        <li><a href="https://github.com/{{ .Site.Author.github }}"><i class="icon-github" aria-hidden="true"></i></a></li>
+        <li><a href="https://github.com/{{ .Site.Author.github }}" rel="me"><i class="icon-github" aria-hidden="true"></i></a></li>
         {{ end }}
       </ul>
       {{ with .Site.Params.tagline }}
