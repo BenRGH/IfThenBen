@@ -11,7 +11,7 @@ enableEmoji = true
 pygmentsCodeFences = true
 enableRobotsTXT = true
 
-DisqusShortname = "ifthenben"
+# DisqusShortname = "ifthenben"
 
 [author]
     name = "Ben"
